@@ -3,15 +3,29 @@ const markReadContainer = document.getElementById('mark-read-container')
 
 const markingRead = document.getElementById('marking-read')
 
+const searchBtn = document.getElementById('search-btn');
+
+
+
 let indicator = ''
 
 let count = 0;
 
+let res = ''
+
+
 const countingMark = document.getElementById('counting-mark')
 const countingMarkValue = parseInt(countingMark.innerText)
 
-const latestPosts = async () => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+const latestPosts = async (categoryName='comedy') => {
+    console.log(res)
+    if (res.length === 0) {
+        res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+    }
+    else {
+        res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
+    }
+    // const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
     const data = await res.json();
     const posts = data.posts
     displayPost(posts)
@@ -19,6 +33,7 @@ const latestPosts = async () => {
 }
 
 const displayPost = async (posts) => {
+    postsContainer.textContent = ''
     console.log(posts);
     posts.forEach(element => {
 
@@ -82,10 +97,10 @@ function markRead() {
     for (const btn of allBtn) {
         btn.addEventListener('click', function (e) {
             e.preventDefault()
-            count++
-            const countingMarkValue = count
+            count++;
+            const countingMarkValue = count;
             countingMark.innerText = countingMarkValue
-            
+
             const title = e.target.parentNode.parentNode.parentNode.childNodes[3].childNodes[1].innerHTML;
             const views = e.target.parentNode.parentNode.childNodes[1].childNodes[3].childNodes[3].innerText
             const div = document.createElement('div');
@@ -102,5 +117,11 @@ function markRead() {
         })
     }
 }
+
+searchBtn.addEventListener('click', function (e) {
+    const searchField = document.getElementById('search-field');
+    const categoryName = searchField.value;
+    latestPosts(categoryName)
+})
 
 latestPosts()

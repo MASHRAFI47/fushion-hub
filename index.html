@@ -70,8 +70,8 @@
                         Forum</h1>
                     <p class="py-6 text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
                     <label class="input input-bordered flex items-center gap-2">
-                        <input type="text" class="grow" placeholder="Search" />
-                        <button class="my-btn px-3 rounded-xl">Search</button>
+                        <input type="text" id="search-field" class="grow" placeholder="Search" />
+                        <button class="my-btn px-3 rounded-xl" id="search-btn">Search</button>
                     </label>
                 </div>
             </div>
@@ -81,67 +81,72 @@
         <section>
             <div class="text-center">
                 <h1 class="text-3xl font-extrabold mb-2">Let's Discuss</h1>
-                <p class="w-[80%] md:w-[50%] mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing
+                <p class="w-[80%] md:w-[50%] mx-auto mb-3">Yes, you can run unit tests and view the results directly within
+                    the app. The integrated testing
                     features
                     allow for a streamlined .</p>
             </div>
 
-            <div id="posts-container" class="flex flex-col">
+            <div class="flex flex-col">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8">
 
-                <!-- <div class="flex flex-col md:flex-row gap-4 md:gap-8">
-                    <div class="flex bg-[#797DFC1A] p-4 md:p-10 rounded-2xl mb-10 w-[70%]">
-                        <div class="indicator">
-                            <div>
-                                <span class="indicator-item badge badge-secondary"></span>
-                                <div class="grid w-32 h-32 bg-base-300 place-items-center">content</div>
-                            </div>
-                        </div>
-                        <div class="ml-10">
-                            <div class="flex gap-10 mb-3">
-                                <h5 class="font-semibold">Music</h5>
-                                <h5 class="font-semibold">Author</h5>
-                            </div>
-
-                            <div class="border-dashed border-b-2 border-gray-500">
-                                <h2 class="text-lg md:text-xl font-bold mb-3">10 Kids Unaware of Their Halloween Costume
-                                </h2>
-                                <p class="mb-4">It’s one thing to subject yourself to ha Halloween costume mishap
-                                    because, hey that’s your prerogative</p>
-                            </div>
-
-                            <div class="flex justify-between">
-                                <div class="flex gap-6 mt-6 mb-3">
-                                    <div class="flex gap-3">
-                                        <img src="images/comments.png" alt="">
-                                        <p>560</p>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <img src="images/comments.png" alt="">
-                                        <p>560</p>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <img src="images/comments.png" alt="">
-                                        <p>560</p>
-                                    </div>
+                    <div id="posts-container">
+                        <!-- <div class="flex bg-[#797DFC1A] p-4 md:p-10 rounded-2xl mb-10 w-[70%]">
+                            <div class="indicator">
+                                <div>
+                                    <span class="indicator-item badge badge-secondary"></span>
+                                    <div class="grid w-32 h-32 bg-base-300 place-items-center">content</div>
                                 </div>
-                                <button><img src="images/mark.png" alt=""></button>
                             </div>
-                        </div>
-                    </div> -->
+                            <div class="ml-10">
+                                <div class="flex gap-10 mb-3">
+                                    <h5 class="font-semibold">Music</h5>
+                                    <h5 class="font-semibold">Author</h5>
+                                </div>
 
+                                <div class="border-dashed border-b-2 border-gray-500">
+                                    <h2 class="text-lg md:text-xl font-bold mb-3">10 Kids Unaware of Their Halloween
+                                        Costume
+                                    </h2>
+                                    <p class="mb-4">It’s one thing to subject yourself to ha Halloween costume mishap
+                                        because, hey that’s your prerogative</p>
+                                </div>
 
-                <div class="bg-[#12132D0D] p-4 flex-1 w-[30%]">
-                    <div>
-                        <div class="flex justify-between">
-                            <h4 class="font-bold">Title</h4>
-                            <div class="flex gap-2">
-                                <img src="images/Frame.png" alt="">
-                                <p>Mark as read(<span id="counting-mark">0</span>)</p>
+                                <div class="flex justify-between">
+                                    <div class="flex gap-6 mt-6 mb-3">
+                                        <div class="flex gap-3">
+                                            <img src="images/comments.png" alt="">
+                                            <p>560</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <img src="images/comments.png" alt="">
+                                            <p>560</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <img src="images/comments.png" alt="">
+                                            <p>560</p>
+                                        </div>
+                                    </div>
+                                    <button><img src="images/mark.png" alt=""></button>
+                                </div>
                             </div>
-                        </div>
+                        </div> -->
+        
+                    </div>
 
-                        <div id="mark-read-container">
-                            <!-- <div class="flex bg-white p-3 rounded-xl mt-2">
+
+                    <div class="bg-[#12132D0D] p-4 w-[30%] h-full rounded-xl">
+                        <div>
+                            <div class="flex justify-between">
+                                <h4 class="font-bold">Title</h4>
+                                <div class="flex gap-2">
+                                    <img src="images/Frame.png" alt="">
+                                    <p>Mark as read(<span id="counting-mark">0</span>)</p>
+                                </div>
+                            </div>
+
+                            <div id="mark-read-container">
+                                <!-- <div class="flex bg-white p-3 rounded-xl mt-2">
                                     <p class="w-[70%]">10 Kids Unaware of Their Halloween Costume</p>
                                     <div class="flex items-center gap-2 w-[30%]">
                                         <img src="images/views.png" width="20px" alt="">
@@ -155,10 +160,10 @@
                                         <p>1568</p>
                                     </div>
                                 </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
             </div>
         </section>
@@ -167,14 +172,29 @@
             <div class="join-our-forum bg-[#12132D] flex flex-col md:flex-row p-10 rounded-2xl">
                 <div class="flex flex-col gap-5 justify-center">
                     <h1 class="text-2xl font-extrabold text-white">Join Our Forum</h1>
-                    <p class="text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
-                    <button class="w-full md:w-[25%] bg-[#797DFC] text-white rounded-xl py-2 font-semibold">Registered Now</button>
+                    <p class="text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug! Yes, you
+                        can run unit tests and view the results directly within the app. </p>
+                    <button class="w-full md:w-[25%] bg-[#797DFC] text-white rounded-xl py-2 font-semibold">Registered
+                        Now</button>
                 </div>
                 <div>
                     <img src="images/joinforum.png" alt="">
                 </div>
             </div>
         </section>
+
+
+        <section>
+            <div class="text-center">
+                <h1 class="text-3xl font-extrabold mb-2">Latest Posts</h1>
+                <p class="w-[80%] md:w-[50%] mx-auto">Yes, you can run unit tests and view the results directly within
+                    the app. The integrated testing
+                    features
+                    allow for a streamlined .</p>
+            </div>
+        </section>
+
+
     </main>
     <footer></footer>
 
