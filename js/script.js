@@ -40,7 +40,7 @@ const displayPost = async (posts) => {
     postsContainer.textContent = ''
     posts.forEach(element => {
         //destructuring
-        const { category, isActive, image, title, comment_count, view_count, posted_time } = element
+        const { category, isActive, image, title, comment_count, view_count, posted_time, description } = element
 
         // show green if active
         if (isActive) {
@@ -67,7 +67,7 @@ const displayPost = async (posts) => {
 
                         <div class="border-dashed border-b-2 border-gray-500">
                             <h2 class="text-lg md:text-xl font-bold mb-3">${title}</h2>
-                            <p class="mb-4">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+                            <p class="mb-4">${description}</p>
                         </div>
 
                         <div class="flex justify-between">
