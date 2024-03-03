@@ -7,6 +7,8 @@ const searchBtn = document.getElementById('search-btn');
 
 const latestPost = document.getElementById('latest-post')
 
+const spinnerContainer = document.getElementById('spinner-container');
+
 let indicator = ''
 
 let count = 0;
@@ -90,7 +92,9 @@ const displayPost = async (posts) => {
         `
         postsContainer.appendChild(div)
     });
-
+    setTimeout(() => {
+        spinner(false)
+    }, 2000);
 }
 
 // mark as read functionality
@@ -125,6 +129,7 @@ searchBtn.addEventListener('click', function () {
     const searchField = document.getElementById('search-field');
     const categoryName = searchField.value;
     allPosts(categoryName)
+    spinner(true)
 })
 
 
@@ -163,6 +168,16 @@ function allLatestPosts(data) {
         </div>
         `
         latestPost.append(div)
+    }
+    
+}
+
+
+function spinner(bool) {
+    if(bool) {
+        spinnerContainer.classList.remove('hidden')
+    } else {
+        spinnerContainer.classList.add('hidden')
     }
 }
 
