@@ -29,3 +29,7 @@ section {
     font-optical-sizing: auto;
     font-style: normal;
 }
+
+footer {
+    margin-top: 80px;
+}
