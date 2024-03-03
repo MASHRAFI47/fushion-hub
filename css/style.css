@@ -1,0 +1,31 @@
+.my-btn {
+    background-color: #6662FB;
+    color: white;
+    transition: 0.5s;
+}
+
+.my-btn:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+section {
+    margin-top: 80px;
+}
+
+.hero {
+    background: url('../images/bgbanner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #0F0F21;
+}
+
+.hero-retro {
+    color: #6662FB;
+}
+
+.mulish {
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Forum</title>
+
+    <!-- tailwind css and daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- style css linking -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="mulish">
+    <header class="container mx-auto">
+        <!-- navbar -->
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="font-bold text-2xl">Retro</a>
+            </div>
+            <div class="flex-none gap-4">
+                <button class="btn btn-circle p-3">
+                    <img src="images/home.png" title="home" alt="">
+                </button>
+                <button class="btn btn-circle p-3">
+                    <img src="images/pencil.png" title="edit" alt="">
+                </button>
+                <button class="btn btn-circle p-3">
+                    <img src="images/add-user.png" title="add" alt="">
+                </button>
+                <button class="btn btn-circle p-3">
+                    <img src="images/red-flag.png" title="report" alt="">
+                </button>
+                <button class="btn my-btn rounded-2xl">
+                    Sign in
+                </button>
+            </div>
+        </div>
+
+        <!-- banner -->
+        <div class="hero bg-base-200 mt-8 py-10 rounded-2xl">
+            <div class="hero-content flex-col flex-col-reverse lg:flex-row-reverse gap-5 md:gap-20">
+                <div class="p-5 w-full md:w-[20rem] bg-white rounded-2xl">
+                    <div class="flex gap-4">
+                        <h3 class="flex-1">Registered Users</h3>
+                        <p class="flex-1 text-end">01</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <h3 class="flex-1">Forum</h3>
+                        <p class="flex-1 text-end">05</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <h3 class="flex-1">Topic</h3>
+                        <p class="flex-1 text-end">01</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <h3 class="flex-1">Replies</h3>
+                        <p class="flex-1 text-end">01</p>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-5xl font-bold text-white">Welcome to the <br> <span class="hero-retro">Retro</span>
+                        Forum</h1>
+                    <p class="py-6 text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <label class="input input-bordered flex items-center gap-2">
+                        <input type="text" class="grow" placeholder="Search" />
+                        <button class="my-btn px-3 rounded-xl">Search</button>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto">
+        <section>
+            <h1>Let's Discuss</h1>
+            <p>Yes, you can run unit tests and view the results directly within the app. The integrated testing features
+                allow for a streamlined .</p>
+
+            <div id="posts-container" class="flex flex-col">
+
+                <!-- <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+                    <div class="flex bg-[#797DFC1A] p-4 md:p-10 rounded-2xl mb-10 w-[70%]">
+                        <div class="indicator">
+                            <div>
+                                <span class="indicator-item badge badge-secondary"></span>
+                                <div class="grid w-32 h-32 bg-base-300 place-items-center">content</div>
+                            </div>
+                        </div>
+                        <div class="ml-10">
+                            <div class="flex gap-10 mb-3">
+                                <h5 class="font-semibold">Music</h5>
+                                <h5 class="font-semibold">Author</h5>
+                            </div>
+
+                            <div class="border-dashed border-b-2 border-gray-500">
+                                <h2 class="text-lg md:text-xl font-bold mb-3">10 Kids Unaware of Their Halloween Costume
+                                </h2>
+                                <p class="mb-4">It’s one thing to subject yourself to ha Halloween costume mishap
+                                    because, hey that’s your prerogative</p>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <div class="flex gap-6 mt-6 mb-3">
+                                    <div class="flex gap-3">
+                                        <img src="images/comments.png" alt="">
+                                        <p>560</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <img src="images/comments.png" alt="">
+                                        <p>560</p>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <img src="images/comments.png" alt="">
+                                        <p>560</p>
+                                    </div>
+                                </div>
+                                <button><img src="images/mark.png" alt=""></button>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                    <div class="bg-[#12132D0D] p-4 flex-1 w-[30%]">
+                        <div>
+                            <div class="flex justify-between">
+                                <h4 class="font-bold">Title</h4>
+                                <div class="flex gap-2">
+                                    <img src="images/Frame.png" alt="">
+                                    <p>Mark as read(<span id="counting-mark">0</span>)</p>
+                                </div>
+                            </div>
+
+                            <div id="mark-read-container">
+                                <!-- <div class="flex bg-white p-3 rounded-xl mt-2">
+                                    <p class="w-[70%]">10 Kids Unaware of Their Halloween Costume</p>
+                                    <div class="flex items-center gap-2 w-[30%]">
+                                        <img src="images/views.png" width="20px" alt="">
+                                        <p>1568</p>
+                                    </div>
+                                </div>
+                                <div class="flex bg-white p-3 rounded-xl mt-2">
+                                    <p class="w-[70%]">10 Kids Unaware of Their Halloween Costume</p>
+                                    <div class="flex items-center gap-2 w-[30%]">
+                                        <img src="images/views.png" width="20px" alt="">
+                                        <p>1568</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
