@@ -52,14 +52,14 @@ const displayPost = async (posts) => {
         // append
         const div = document.createElement('div');
         div.innerHTML = `
-                <div class="flex bg-[#797DFC1A] p-4 md:p-10 rounded-2xl mb-10">
-                    <div class="indicator">
+                <div class="flex flex-col md:flex-row items-center md:items-start bg-[#797DFC1A] p-4 md:p-10 rounded-2xl mb-10">
+                    <div class="indicator my-3 md:my-0">
                         <div>
                             ${indicator}
-                            <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${image}"></div>
+                            <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${image}" class="rounded-xl"></div>
                         </div>
                     </div>
-                    <div class="ml-10">
+                    <div class="ml-0 md:ml-10">
                         <div class="flex gap-10 mb-3">
                             <h5 class="font-semibold"># ${category}</h5>
                             <h5 class="font-semibold">Author: ${element.author.name}</h5>
@@ -71,7 +71,7 @@ const displayPost = async (posts) => {
                         </div>
 
                         <div class="flex justify-between">
-                            <div class="flex gap-6 mt-6 mb-3">
+                            <div class="grid grid-cols-3 lg:grid-cols-3 gap-6 mt-6 mb-3">
                                 <div class="flex gap-3">
                                     <img src="images/comments.png" alt="">
                                     <p>${comment_count}</p>

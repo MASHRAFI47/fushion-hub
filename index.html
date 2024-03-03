@@ -25,7 +25,7 @@
 <body class="mulish">
     <header class="container mx-auto">
         <!-- navbar -->
-        <div class="navbar bg-base-100">
+        <!-- <div class="navbar bg-base-100">
             <div class="flex-1">
                 <a class="font-bold text-2xl">Retro</a>
             </div>
@@ -42,6 +42,58 @@
                 <button class="btn btn-circle p-3">
                     <img src="images/red-flag.png" title="report" alt="">
                 </button>
+                <button class="btn my-btn rounded-2xl">
+                    Sign in
+                </button>
+            </div>
+        </div> -->
+
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a><button class="btn btn-circle p-3">
+                            <img src="images/home.png" title="home" alt="">
+                        </button>Home</a></li>
+                        <li><a><button class="btn btn-circle p-3">
+                            <img src="images/pencil.png" title="home" alt="">
+                        </button>Edit</a></li>
+                        <li><a><button class="btn btn-circle p-3">
+                            <img src="images/add-user.png" title="home" alt="">
+                        </button>Add User</a></li>
+                        <li><a><button class="btn btn-circle p-3">
+                            <img src="images/home.png" title="home" alt="">
+                        </button>Report</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-xl">daisyUI</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+
+            </div>
+            <div class="navbar-end">
+                <ul class="menu menu-horizontal px-1 hidden lg:inline-flex">
+                    <li><a><button class="btn btn-circle p-3">
+                                <img src="images/home.png" title="home" alt="">
+                            </button></a></li>
+                    <li><a><button class="btn btn-circle p-3">
+                                <img src="images/pencil.png" title="home" alt="">
+                            </button></a></li>
+                    <li><a><button class="btn btn-circle p-3">
+                                <img src="images/add-user.png" title="home" alt="">
+                            </button></a></li>
+                    <li><a><button class="btn btn-circle p-3">
+                                <img src="images/red-flag.png" title="home" alt="">
+                            </button></a></li>
+                </ul>
                 <button class="btn my-btn rounded-2xl">
                     Sign in
                 </button>
@@ -81,6 +133,8 @@
             </div>
         </div>
     </header>
+
+
     <main class="container mx-auto">
         <section>
             <div class="text-center">
@@ -98,7 +152,7 @@
 
 
             <div class="flex flex-col">
-                <div class="flex flex-col flex-col-reverse md:flex-row gap-4 md:gap-8">
+                <div class="flex flex-col flex-col-reverse lg:flex-row gap-4 md:gap-8">
 
                     <div id="posts-container">
 
@@ -147,7 +201,7 @@
                     </div>
 
 
-                    <div class="bg-[#12132D0D] p-4 w-full md:w-[30%] h-full rounded-xl">
+                    <div class="bg-[#12132D0D] p-4 w-full lg:w-[30%] h-full rounded-xl">
                         <div>
                             <div class="flex justify-between">
                                 <h4 class="font-bold">Title</h4>
@@ -230,7 +284,8 @@
     <footer>
         <div class="text-center bg-base-200 py-10">
             <h2 class="text-3xl font-extrabold mb-3">Retro</h2>
-            <p class="mb-5 w-full md:w-[50%] mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+            <p class="mb-5 w-full md:w-[50%] mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC</p>
             <div class="flex gap-10 justify-center border-b-2">
                 <a href="#"><i class="fa fa-twitter text-2xl mb-8" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-facebook text-2xl" aria-hidden="true"></i></a>
