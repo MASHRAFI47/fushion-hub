@@ -5,20 +5,22 @@ const markingRead = document.getElementById('marking-read')
 
 const searchBtn = document.getElementById('search-btn');
 
-
+const latestPost = document.getElementById('latest-post')
 
 let indicator = ''
 
 let count = 0;
 
-let res = ''
+let res = '';
+
+
 
 
 const countingMark = document.getElementById('counting-mark')
 const countingMarkValue = parseInt(countingMark.innerText)
 
-const latestPosts = async (categoryName='comedy') => {
-    console.log(res)
+const allPosts = async (categoryName = 'comedy') => {
+    // dynamic fetch
     if (res.length === 0) {
         res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
     }
@@ -34,17 +36,18 @@ const latestPosts = async (categoryName='comedy') => {
 
 const displayPost = async (posts) => {
     postsContainer.textContent = ''
-    console.log(posts);
     posts.forEach(element => {
-
+        //destructuring
         const { category, isActive, image, title, comment_count, view_count, posted_time } = element
 
+        // show green if active
         if (isActive) {
             indicator = `<span class="indicator-item badge badge-success"></span>`
         } else {
             indicator = `<span class="indicator-item badge badge-error"></span>`
         }
 
+        // append
         const div = document.createElement('div');
         div.innerHTML = `
                 <div class="flex bg-[#797DFC1A] p-4 md:p-10 rounded-2xl mb-10">
@@ -90,8 +93,7 @@ const displayPost = async (posts) => {
 
 }
 
-
-
+// mark as read functionality
 function markRead() {
     const allBtn = document.querySelectorAll('.buttons')
     for (const btn of allBtn) {
@@ -118,10 +120,50 @@ function markRead() {
     }
 }
 
-searchBtn.addEventListener('click', function (e) {
+// search by category name
+searchBtn.addEventListener('click', function () {
     const searchField = document.getElementById('search-field');
     const categoryName = searchField.value;
-    latestPosts(categoryName)
+    allPosts(categoryName)
 })
+
+
+allPosts()
+
+
+const latestPosts = async () => {
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+    const data = await res.json();
+    allLatestPosts(data)
+}
+
+function allLatestPosts(data) {
+    for (const singleData of data) {
+
+        //destructuring
+        const { cover_image, profile_image, description, title } = singleData
+
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <div class="flex flex-col gap-3 border-2 rounded-2xl p-5">
+            <img src="${cover_image}" alt="" class="bg-[#12132D0D]">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <p>${singleData.author.posted_date ? singleData.author.posted_date: "No Publish Date" }</p>
+            </div>
+            <h4 class="text-xl font-semibold">${title}</h4>
+            <p class="text-[#12132D99]">${description}</p>
+            <div class="flex gap-2">
+                <img src="${profile_image}" width="40px" class="rounded-full" alt="">
+                <div>
+                    <h5>${singleData.author.name}</h5>
+                    <p>${singleData.author.designation ? singleData.author.designation : "Unknown"}</p>
+                </div>
+            </div>
+        </div>
+        `
+        latestPost.append(div)
+    }
+}
 
 latestPosts()
