@@ -59,7 +59,7 @@ const displayPost = async (posts) => {
                             <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${image}" class="rounded-xl"></div>
                         </div>
                     </div>
-                    <div class="ml-0 md:ml-10">
+                    <div class="ml-0 md:ml-10 w-full">
                         <div class="flex gap-10 mb-3">
                             <h5 class="font-semibold"># ${category}</h5>
                             <h5 class="font-semibold">Author: ${element.author.name}</h5>
