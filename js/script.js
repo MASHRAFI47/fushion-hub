@@ -151,7 +151,7 @@ function allLatestPosts(data) {
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="flex flex-col gap-3 border-2 rounded-2xl p-5">
-            <img src="${cover_image}" alt="" class="bg-[#12132D0D]">
+            <img src="${cover_image}" alt="" class="bg-[#12132D0D] rounded-2xl">
             <div class="flex items-center gap-2">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
                 <p>${singleData.author.posted_date ? singleData.author.posted_date: "No Publish Date" }</p>
